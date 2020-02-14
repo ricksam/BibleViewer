@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{903C6263-5857-4E4B-9832-03953D19FF6D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BibleViewer</RootNamespace>
+    <AssemblyName>BibleViewer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>1358562309_66344.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmBiblia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBiblia.Designer.cs">
+      <DependentUpon>frmBiblia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLivros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLivros.Designer.cs">
+      <DependentUpon>frmLivros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\BIBLIA.cs" />
+    <Compile Include="MODEL\CAPITULOS.cs" />
+    <Compile Include="MODEL\CONTADOR.cs" />
+    <Compile Include="MODEL\FAVORITOS.cs" />
+    <Compile Include="MODEL\LIVROS.cs" />
+    <Compile Include="MODEL\PALAVRAS.cs" />
+    <Compile Include="frmPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesquisa.Designer.cs">
+      <DependentUpon>frmPesquisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities.cs" />
+    <EmbeddedResource Include="frmBiblia.resx">
+      <DependentUpon>frmBiblia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLivros.resx">
+      <DependentUpon>frmLivros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesquisa.resx">
+      <DependentUpon>frmPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Database\bible_jfa_rc.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Database\bible_jfa_rcl.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1358562309_66344.ico" />
+    <Content Include="Install\Install_BiblieViewer.iss" />
+    <Content Include="Install\Splash_Screen.png" />
+    <Content Include="Install\UpdateConfig.xml" />
+    <Content Include="MetadataComDadosBiblia.sql" />
+    <None Include="Resources\1364850615_Search.png" />
+    <None Include="Resources\1358556974_arrowright.png" />
+    <None Include="Resources\1358556974_arrowleft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\lib.class\lib.Class.csproj">
+      <Project>{4A3F7BED-010A-48C8-8673-E484F0148BA8}</Project>
+      <Name>lib.Class</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\lib.Entity\lib.Entity.csproj">
+      <Project>{bdcf9969-b9cd-457e-8711-e74e52563966}</Project>
+      <Name>lib.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\lib.Visual\lib.Visual.csproj">
+      <Project>{E168A2F0-C4C5-48C9-B915-CC88BFAE8980}</Project>
+      <Name>lib.Visual</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CONTROLLER\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,20 @@
+﻿using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Text;
+using lib.Database;
+using lib.Database.MVC;
+using lib.Database.Drivers;
+
+namespace BibleViewer
+{
+  public partial class FAVORITOS : DefaultEntity
+  {
+    public int ID { get; set; }
+    public int CODLIVRO { get; set; }
+    public int CAPITULO { get; set; }
+    public int VERS_I { get; set; }
+    public int VERS_F { get; set; }
+    public string DESCRICAO { get; set; }
+  }
+}

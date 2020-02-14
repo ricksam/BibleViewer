@@ -1,0 +1,20 @@
+﻿using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Text;
+using lib.Database;
+using lib.Database.MVC;
+using lib.Database.Drivers;
+
+namespace BibleViewer
+{
+  public partial class LIVROS : DefaultEntity
+  {          
+    public int CODLIVRO { get; set; }
+    public string LIVRO { get; set; }
+    public override string ToString()
+    {
+      return LIVRO;
+    }
+  }
+}

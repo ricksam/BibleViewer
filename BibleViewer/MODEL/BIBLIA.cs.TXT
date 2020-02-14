@@ -1,0 +1,27 @@
+﻿using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Text;
+using lib.Database;
+using lib.Database.MVC;
+using lib.Database.Drivers;
+
+namespace BibleViewer
+{
+  public partial class BIBLIA : DefaultEntity
+  {
+    public int ID { get; set; }
+    public int CODLIVRO { get; set; }
+    public int CAPITULO { get; set; }
+    public int VERSICULO { get; set; }
+    public string ESCRITURA { get; set; }
+    public string LIVRO { get; set; }
+    public override string ToString()
+    {
+      if (!string.IsNullOrEmpty(LIVRO))
+      { return string.Format("({0} {1},{2}) {3}", LIVRO, CAPITULO, VERSICULO, ESCRITURA); }
+      else
+      { return VERSICULO + " " + ESCRITURA; }
+    }
+  }
+}
